@@ -1,0 +1,45 @@
+{% load media %}{% load static %}
+<html>
+<head>
+  <title>{{ page.title }}</title>
+
+  <!-- Magnific Popup core CSS file -->
+  <link rel="stylesheet" href="{% static 'staby/css/magnific-popup.css' %}">
+
+  <!-- jQuery 1.7.2+ or Zepto.js 1.0+ -->
+  <script src="{% static 'staby/js/jquery-3.4.1.min.js' %}"></script>
+
+  <!-- Magnific Popup core JS file -->
+  <script src="{% static 'staby/js/jquery.magnific-popup.min.js' %}"></script>
+
+</head>
+<body>
+
+<h1>{{ page.title }}</h1>
+<h2>{{ folder.title }}</h2>
+
+<h3>Files:</h3>
+<ul class="gallery">
+  {% for file in folder.get_files %}
+  <li>
+    <a href="{{ file.url }}">
+      <img src="{{ file | thumbnail:'default' }}" />
+    </a>
+  </li>
+  {% endfor %}
+</ul>
+
+<script>
+  $(document).ready(function() {
+    $('.gallery').magnificPopup({
+      type:'image',
+      delegate: 'a',
+      gallery: {
+        enabled: true,
+      },
+    });
+  });
+</script>
+
+</body>
+</html>

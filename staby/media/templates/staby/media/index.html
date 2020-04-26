@@ -1,0 +1,67 @@
+{% extends "admin/base_site.html" %}
+{% load static %}
+
+{% block extrastyle %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/changelists.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static '/staby/vendor/fileicons/file-icon-classic.min.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static '/staby/css/media.css' %}" />
+{% endblock %}
+
+{% block extrahead %}
+    <script src="{% static 'admin/js/vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'admin/js/jquery.init.js' %}"></script>
+    <script src="{% static 'staby/js/media.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+
+<h1>Media at: /{{ path|default:'' }}</h1>
+
+<div class="content-main">
+
+    <ul class="object-tools">
+        <li>
+            <a class="addlink" href="{% url 'media:media_folder_create' %}?path={{ path|default:'' }}">create folder</a><br />
+        </li>
+        <li>
+            <a class="addlink" href="{% url 'media:media_upload' %}?path={{ path|default:'' }}">upload</a><br />
+        </li>
+    </ul>
+
+    <div id="changelist" class="module">
+        <div class="results">
+            <table class="results_list">
+                <thead>
+                    <tr>
+                        <th><div class="text"><span>Name</span></div></th>
+                        <th><div class="text"><span>Actions</span></div></th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for entry in entries %}
+                    <tr>
+                        <td>
+                            <span class="fiv-cla fiv-size-md fiv-icon-{{ entry.icon }}"></span>
+                            <a class="{% if entry.is_file %}media-file{% endif %}" href="{{ entry.url }}" data-path="{{path}}/{{entry.name}}">{{ entry.name }}</a>
+                        </td>
+                        <td>
+                        {% if entry.name != '..' %}
+                            <a href="{% url 'media:media_rename' %}?path={{ path|default:'' }}&item={{ entry.name|urlencode }}">rename</a> |
+                            <a href="{% url 'media:media_delete' %}?path={{ path|default:'' }}&item={{ entry.name|urlencode }}">delete</a>
+                        {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    django.jQuery(document).ready(function() {
+        Media.init();
+    });
+</script>
+{% endblock %}

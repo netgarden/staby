@@ -1,0 +1,11 @@
+<input
+        id="{{ final_attrs.id }}"
+        type="text"
+        class="mediaFileBrowseField{% if final_attrs.class %} {{ final_attrs.class }}{% endif %}"
+        name="{{ final_attrs.name }}"
+        value="{{ value }}"
+        {% for k, v in final_attrs.data_attrs.items %}{{k}}="{{v}}" {% endfor %}
+/>
+<a href="javascript:Media.showPopup('{{ final_attrs.id }}', '{{ url }}?{% if final_attrs.directory %}path={{ final_attrs.directory|urlencode|urlencode }}{% endif %}');" class="media_show">
+    choose
+</a>

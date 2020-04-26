@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title> Tests </title>
+    <link rel="stylesheet" href="../node_modules/mocha/mocha.css" />
+</head>
+<body>
+<div id="mocha"></div>
+
+<script src="../node_modules/mocha/mocha.js"></script>
+<script src="../node_modules/chai/chai.js"></script>
+
+<script>
+    mocha.ui('bdd');
+    mocha.reporter('html');
+</script>
+
+<link rel="stylesheet" href="../build/calendar.css" />
+<script src="../build/calendar.full.min.js"></script>
+
+<script src="tests/bootstrap.js"></script>
+<script src="tests/constructor.js"></script>
+<script src="tests/mask.js"></script>
+<script>
+    window.onload = function() {
+        if (window.mochaPhantomJS) {
+            mochaPhantomJS.run();
+        } else {
+            mocha.run();
+        }
+    };
+</script>
+</body>
+</html>

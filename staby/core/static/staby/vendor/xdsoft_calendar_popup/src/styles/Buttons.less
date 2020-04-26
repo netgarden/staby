@@ -1,0 +1,53 @@
+.calendar-popup-composer_calendar-popup-buttons {
+  padding: 9px 0 8px;
+  text-align: center;
+
+  .calendar-popup-button {
+    margin-right: 8px;
+    text-align: right;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    vertical-align: top;
+    i {
+      &.calendar-popup-button_text {
+        background-position:0 -99px;
+        background-repeat: repeat-x;
+        color: #000;
+        display: inline-block;
+        height: 19px;
+        font-size: 12px;
+        line-height: 16px;
+        vertical-align: top;
+        padding: 4px 10px 0;
+      }
+
+      &:first-child {
+        background-position: 0 -45px;
+        display: inline-block;
+        vertical-align: top;
+        height: 23px;
+        width: 4px;
+      }
+      &:last-child {
+        background-position: -5px -45px;
+        display: inline-block;
+        vertical-align: top;
+        height: 23px;
+        width: 4px;
+      }
+    }
+    &:hover i {
+      &.calendar-popup-button_text {
+        background-position: 0 -74px;
+      }
+
+      &:first-child {
+        background-position: 0 -15px;
+      }
+      &:last-child {
+        background-position: -5px -15px;
+      }
+    }
+  }
+}

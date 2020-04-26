@@ -1,0 +1,35 @@
+{% load staby_gallery %}{% load static %}
+<html>
+<head>
+  <title>{{ page.title }}</title>
+
+  <!-- Magnific Popup core CSS file -->
+  <link rel="stylesheet" href="{% static 'staby/css/magnific-popup.css' %}">
+
+  <!-- jQuery 1.7.2+ or Zepto.js 1.0+ -->
+  <script src="{% static 'staby/js/jquery-3.4.1.min.js' %}"></script>
+
+  <!-- Magnific Popup core JS file -->
+  <script src="{% static 'staby/js/jquery.magnific-popup.min.js' %}"></script>
+
+</head>
+<body>
+
+<h1>{{ page.title }}</h1>
+
+<h3>Folders:</h3>
+<ul>
+  {% for folder in page.folders.all %}
+  <li>
+    <a href="{{ folder.get_absolute_url }}">
+      <img src="{{ folder.image | thumbnail_url:'default' }}" /><br/>
+      <span>{{ folder.title }}</span>
+    </a>
+  </li>
+  {% endfor %}
+</ul>
+
+
+
+</body>
+</html>

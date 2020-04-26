@@ -1,0 +1,15 @@
+{% load i18n %}
+
+{% include "django/forms/widgets/input.html" %}
+{% get_current_language as LANGUAGE_CODE %}
+
+<script>
+  django.jQuery(function () {
+    django.jQuery("input[name='{{ widget.name }}']").CalendarPopup({
+      format: "YYYY-MM-DD",
+      dayOfWeekStart: 1,
+      datepicker: true,
+      timepicker: false,
+    });
+  });
+</script>

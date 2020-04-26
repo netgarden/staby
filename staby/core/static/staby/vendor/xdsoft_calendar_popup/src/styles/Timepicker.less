@@ -1,0 +1,45 @@
+.calendar-popup-composer_calendar-popup-timepicker{
+  min-width: 182px;
+  border-top: 1px solid #f2f2f2;
+  border-bottom: 1px solid #f2f2f2;
+  margin: -5px 0 0 0;
+  position: relative;
+  text-decoration: none;
+  .calendar-popup-timepicker_toggler {
+    cursor: pointer;
+    font-size: 11px;
+    color: #b2b2b2!important;
+    display: none;
+    height: 14px;
+    line-height: 14px;
+    margin-right: 3px;
+    text-align: center;
+    padding: 1px 0 0;
+    text-decoration: none;
+    i {
+      background-position: 0 0;
+      height: 9px;
+      display: inline-block;
+      margin: 2px 3px 0 0;
+      vertical-align: top;
+      width: 9px;
+    }
+  }
+  .calendar-popup-select_title {
+    display: inline-block;
+    color: #a6a6a6;
+    font-size: 11px;
+    margin-top: 10px;
+    padding: 0 0 0 5px;
+    vertical-align: top;
+    width: 38px;
+  }
+  &.calendar-popup-timepicker_closed {
+    .calendar-popup-timepicker_toggler {
+      display: block;
+    }
+    .calendar-popup-composer_calendar-popup-timepicker_wrap {
+      display: none;
+    }
+  }
+}

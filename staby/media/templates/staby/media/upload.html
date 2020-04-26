@@ -1,0 +1,10 @@
+{% extends "admin/base_site.html" %}
+
+{% block content %}
+<h3>Upload:</h3>
+<form method="POST" enctype="multipart/form-data">
+{% csrf_token %}
+{{ form }}
+<input type="submit" value="upload" />
+</form>
+{% endblock %}

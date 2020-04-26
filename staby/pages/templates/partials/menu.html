@@ -1,0 +1,13 @@
+
+{% for item in items %}
+<li>
+    <a href="{{ item.url }}"{% if item.active %} style="color: red;"{% endif %}>{{ item.title }}</a>
+    {% if item.children %}
+        <ul>
+              {% with item=item.children menu_template_name=menu_template_name %}
+                   {% include menu_template_name %}
+              {% endwith %}
+         </ul>
+    {%endif%}
+</li>
+{% endfor %}

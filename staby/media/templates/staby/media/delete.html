@@ -1,0 +1,12 @@
+{% extends "admin/base_site.html" %}
+
+{% block content %}
+<div style="text-align: center;">
+    <h3>Delete:</h3>
+    <p>Realy delete '{{ path }}/{{ item }}'?</p>
+    <p>
+        <a href="?path={{ path|default:'' }}&item={{ item }}&ok=1">delete</a> | 
+        <a href="?path={{ path|default:'' }}&item={{ item }}&ok=0">cancel</a>
+    </p>
+</div>
+{% endblock %}

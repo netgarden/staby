@@ -1,0 +1,10 @@
+{% extends "admin/base_site.html" %}
+
+{% block content %}
+<h3>Rename '{{ path|default:'' }}/{{ item }}':</h3>
+<form method="POST">
+{% csrf_token %}
+{{ form }}
+<input type="submit" value="rename" />
+</form>
+{% endblock %}

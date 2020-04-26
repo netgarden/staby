@@ -1,0 +1,27 @@
+export const DAY_SUNDAY = 0;
+export const DAY_MONDAY = 1;
+export const DAY_SATURDAY = 6;
+export const TIMEOUT = 50;
+export const DATE_CLASS = 'calendar-popup-month-dates';
+
+export const KEY0 = 48;
+export const KEY9 = 57;
+export const _KEY0 = 96;
+export const _KEY9 = 105;
+export const CTRLKEY = 17;
+export const DEL = 46;
+export const ENTER = 13;
+export const ESC = 27;
+export const BACKSPACE = 8;
+export const ARROWLEFT = 37;
+export const ARROWUP = 38;
+export const ARROWRIGHT = 39;
+export const ARROWDOWN = 40;
+export const TAB = 9;
+export const F5 = 116;
+export const AKEY = 65;
+export const CKEY = 67;
+export const VKEY = 86;
+export const ZKEY = 90;
+export const YKEY = 89;
+export const XKEY = 88;

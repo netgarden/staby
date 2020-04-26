@@ -1,0 +1,17 @@
+.calendar-popup-container {
+  background-color: @color-background-default;
+  box-shadow: @box-shadow-default;
+  padding: @padding-default;
+  font: @font-default;
+  display: none;
+
+  &, * {
+    box-sizing: content-box !important;
+  }
+
+  &_active {
+    z-index: @z-index-default;
+    position: absolute;
+    display: block;
+  }
+}
