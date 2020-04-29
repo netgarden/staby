@@ -1,0 +1,20 @@
+include LICENSE
+include README.md
+recursive-include staby/admin/static *
+recursive-include staby/admin/templates *
+recursive-include staby/articles/static *
+recursive-include staby/articles/templates *
+recursive-include staby/blog/static *
+recursive-include staby/blog/templates *
+recursive-include staby/core/static *
+recursive-include staby/core/templates *
+recursive-include staby/galleries/static *
+recursive-include staby/galleries/templates *
+recursive-include staby/media/static *
+recursive-include staby/media/templates *
+recursive-include staby/pages/static *
+recursive-include staby/pages/templates *
+recursive-include staby/utils/static *
+recursive-include staby/utils/templates *
+recursive-include staby/widgets/static *
+recursive-include staby/widgets/templates *
