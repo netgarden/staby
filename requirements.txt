@@ -9,4 +9,4 @@ django-tag-parser==3.2
 future==0.18.2
 pytz==2020.1
 sqlparse==0.3.1
-Pillow==7.0.0
+Pillow==8.1.1
