@@ -38,7 +38,7 @@ class MenuNode(template.Node):
             template_name = 'partials/menu.html'
 
         request_page_ids = self.__class__._get_request_page_ids(context)
-        pages = Page.published.filter(show_in_menu=True).values('pk', 'parent_id', 'slug', 'title')
+        pages = Page.published.filter(show_in_menu=True).values('pk', 'parent_id', 'slug', 'title').order_by('tree_id', 'lft')
 
         pages_by_parent = {}
 

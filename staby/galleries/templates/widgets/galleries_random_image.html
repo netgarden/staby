@@ -1,0 +1,14 @@
+{% extends 'partials/widget.html' %}
+{% load media %}
+
+{% block title %}
+    <h4>{{ title }}</h4>
+{% endblock %}
+
+{% block content %}
+    {% if image %}
+    <img src="{{ image | thumbnail:'gallery_random_image_widget' }}" style="max-width:100%; max-height:100%;" />
+    {% else %}
+    <p>Obrázek nenalezen.</p>
+    {% endif %}
+{% endblock %}
