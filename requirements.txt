@@ -1,6 +1,6 @@
 Django==2.2.24
 django-admin-sortable2==0.7.6
-django-debug-toolbar==2.2
+django-debug-toolbar==2.2.1
 django-js-asset==1.2.2
 django-mptt==0.11.0
 django-polymorphic==2.1.2
